@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <my-cnd></my-cnd>
+</div>
+
+<my-cnd></my-cnd>
+<script src="../vue.js"></script>
+<script>
+
+  const father = Vue.extend({
+    template: `
+      <div><h2>qqqq</h2></div>
+    `
+  })
+
+  const child = Vue.extend({
+    template: `
+      <div><h2>wwwwwww</h2>
+        <my-father></my-father>
+      </div>
+
+    `,
+    components: {
+      "my-father" : father
+    }
+  })
+
+  Vue.component("my-cnd",child)
+
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: "ddd"
+    }
+  })
+</script>
+
+
+</body>
+</html>

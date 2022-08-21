@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件开发</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+<my-cdn></my-cdn>
+  <my-cdn></my-cdn>
+  <my-cdn></my-cdn>
+</div>
+
+<script src="../vue.js"></script>
+<script>
+  // 创建组件的构造器对象  其中用的是``反引号
+  const cdn = Vue.extend({
+    template: `
+      <input type="text" value="组件开发1">
+      <input type="text" value="组件开发2">
+    `
+  })
+  //注册组件  Vue.component('自定义组件的名称'，自定义组件变量)
+
+  Vue.component("my-cdn",cdn)
+
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "ddd"
+    }
+  })
+
+
+</script>
+</body>
+</html>

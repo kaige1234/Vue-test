@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <img v-bind:src="imgUrl"/>
+  <a v-bind:href="url"></a>
+<!--  v-bind的简介写法：-->
+  <img :src="imgUrl"/>
+  <a :href="url"></a>
+</div>
+
+<script src="../vue.js">
+</script>
+
+<script>
+  let  app = new Vue({
+    el: "#app",
+    data: {
+      imgUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fd.ikafan.com%2Fupload%2Fe%2F00%2Fe0082e1379ce2d294f00440ba491a9ff.jpg&refer=http%3A%2F%2Fd.ikafan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662561369&t=3637bebef4f7a3d0f5b0e1056c8f14ad",
+      url: "https://www.baidu.com"
+    }
+  })
+</script>
+</body>
+</html>

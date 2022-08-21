@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件和局部组件</title>
+</head>
+<body>
+
+    <div id="app1">
+        {{message}}
+        <all-cdn></all-cdn>
+        <all-cdn></all-cdn>
+        <all-cdn></all-cdn>
+        <par></par>
+    </div>
+
+    <div id="app2">
+        {{message}}
+        <all-cdn></all-cdn>
+        <all-cdn></all-cdn>
+        <all-cdn></all-cdn>
+    </div>
+<script src="../vue.js">
+</script>
+<script>
+
+    //创建组件的构造方法
+    const cdn = Vue.extend({
+        template: `
+            <p>这是一个自定义组件</p>
+        `
+    })
+    //注册组件
+
+    Vue.component("all-cdn",cdn)//全局组件
+
+    const part_cdn= Vue.extend({
+        template: `
+            <input type="text" value="部分组件">
+        `
+    })
+
+  const app1 = new Vue({
+      el: '#app1',
+      data: {
+          message: "全局组件和部分组件app1"
+      },
+      components: {
+          par : part_cdn
+      }
+  })
+
+  const app2 = new Vue({
+      el: '#app2',
+      data: {
+          message: "全局组件和部分组件app2"
+      }
+  })
+</script>
+</body>
+</html>

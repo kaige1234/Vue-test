@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{fristName}} {{lastName}}</h2>
+  <h2>计算属性：</h2><h2>{{fullName}}</h2>
+  <h2>{{totalPic}}</h2>
+</div>
+
+<script src="../vue.js"></script>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    computed: {
+      fullName: function (){
+        return (this.fristName + this.lastName);
+      },
+      totalPic: function (){
+        let total=0;
+        for (let i=0;i<this.product.length;i++){
+          total += this.product[i].pri;
+        }
+        return total;
+      }
+    },
+    data: {
+      fristName: "sunki",
+      lastName: "dddd",
+      product: [
+        {id:1,name:'栗子',pri:112},
+        {id:2,name:'橘子',pri:12},
+        {id:3,name:'贫国',pri:11},
+        {id:4,name:'李子',pri:2}
+      ]
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <h2>v-text 是一个不怎么常用的标签，因为他会覆盖标签里面的信息</h2>
+  <h2 v-text="message">我被v-text给覆盖掉了</h2>
+</div>
+<script src="../vue.js">
+</script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      message: "v-test"
+    }
+  })
+</script>
+</body>
+</html>

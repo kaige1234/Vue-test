@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <h2>{{fristName}} {{lastName}}</h2>
+    <h2>{{fristName +' '+ lastName}}</h2>
+    <h2 v-once>{{vOnce}}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+  const app =new Vue({
+      el: '#app',
+      data: {
+          message: '表达式',
+          fristName: 'sun',
+          lastName: 'kai',
+          vOnce: 'v-Once当标签被v-Once修饰时是不可以修改的'
+      }
+  })
+</script>
+</body>
+</html>
